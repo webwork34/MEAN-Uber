@@ -1,0 +1,55 @@
+<div class="container">
+
+  <p *ngIf="!data && !assignMessage">Loading...</p>
+  <h2 *ngIf="assignMessage">{{assignMessage}}</h2>
+
+  <div *ngIf="data && !assignMessage">
+    <h2
+    *ngIf="message"
+    [ngStyle]="{color: colorToggle ? 'green' : 'red'}"
+    class="mb20"
+  >
+    {{message}}
+  </h2>
+
+  <div class="header">
+    <h4>LOAD NAME</h4>
+    <h4>CREATED DATE</h4>
+    <h4>PICK-UP ADDRESS</h4>
+    <h4>DELIVERY ADDRESS</h4>
+    <h4>LOAD STATE</h4>
+    <h4>ACTION</h4>
+  </div>
+
+  <ul
+    *ngFor="let load of data; let i=index"
+    class="flex"
+  >
+    <li>{{load.name}}</li>
+    <li>{{load.created_date}}</li>
+    <li>{{load.pickup_address}}</li>
+    <li>{{load.delivery_address}}</li>
+    <li class="">{{load.state}}</li>
+    <li class="center">
+
+      <fa-icon
+        [icon]="faEye"
+        class="show"
+        data-tooltip="Show load info"
+        (click)="showLoadInfo(i)"
+        *ngIf="isShipper"
+      ></fa-icon>
+
+      <fa-icon
+        [icon]="faStepForward"
+        class="next-state"
+        data-tooltip="Iterate to next load state"
+        (click)="nextLevel(i)"
+        *ngIf="isDriver"
+      ></fa-icon>
+
+    </li>
+  </ul>
+  </div>
+
+</div>

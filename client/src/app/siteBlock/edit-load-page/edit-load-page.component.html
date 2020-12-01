@@ -1,0 +1,259 @@
+<div class="container">
+
+  <h3 class="mb20">Update load with id - {{loadId}}</h3>
+  <h2
+    *ngIf="message"
+    [ngStyle]="{color: colorToggle ? 'green' : 'red'}"
+    class="center mb20"
+  >
+    {{message}}
+  </h2>
+
+  <p *ngIf="!load; else loaded">Loading...</p>
+
+  <ng-template #loaded>
+    <form
+      class="create-new-load"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="flex mw600 m0a">
+        <div>
+          <div class="form-control">
+            <label for="name">Name: </label>
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              [ngClass]="{'invalid': form.get('name').invalid && form.get('name').touched}"
+            >
+            <span
+              class="error"
+              *ngIf="form.get('name').invalid && form.get('name').touched"
+            >
+              <small *ngIf="form.get('name').errors['required']">
+                Name mustn't be empty
+              </small>
+              <small
+                *ngIf="form.get('name').errors['minlength'] && form.get('name').errors['minlength']['requiredLength']"
+                class="pass-error w210"
+              >
+                Name must be longer then {{form.get('name').errors['minlength']['requiredLength']}} symbols.
+                Now {{form.get('name').errors['minlength']['actualLength']}} symbols
+              </small>
+            </span>
+          </div>
+
+          <div class="mt35 form-control">
+            <label for="password">Payload: </label>
+            <input
+              id="payload"
+              type="number"
+              formControlName="payload"
+              [ngClass]="{'invalid': form.get('payload').invalid && form.get('payload').touched}"
+            >
+            <span
+              class="error"
+              *ngIf="form.get('payload').invalid && form.get('payload').touched"
+            >
+              <small *ngIf="form.get('payload').errors['required']">
+                Payload mustn't be empty.
+              </small>
+              <small
+                *ngIf="form.get('payload').errors['min']"
+                class="pass-error w210 b0"
+              >
+                Payload must be bigger then {{form.get('payload').errors['min']['min']}} kg
+              </small>
+              <small
+                *ngIf="form.get('payload').errors['max']"
+                class="pass-error w210 b0"
+              >
+                Payload must be less then {{form.get('payload').errors['max']['max']}} kg
+              </small>
+              <small
+                *ngIf="form.get('payload').errors['pattern']"
+                class="pass-error b0"
+              >
+                Payload must be digit.
+              </small>
+            </span>
+          </div>
+
+          <div class="mt35 form-control">
+            <label for="pickup_address">Pickup address: </label>
+            <input
+              id="pickup_address"
+              type="text"
+              formControlName="pickup_address"
+              [ngClass]="{'invalid': form.get('pickup_address').invalid && form.get('pickup_address').touched}"
+            >
+            <span
+              class="error"
+              *ngIf="form.get('pickup_address').invalid && form.get('pickup_address').touched"
+            >
+              <small *ngIf="form.get('pickup_address').errors['required']">
+                Pickup address mustn't be empty.
+              </small>
+              <small
+                *ngIf="form.get('pickup_address').errors['minlength'] && form.get('pickup_address').errors['minlength']['requiredLength']"
+                class="pass-error w210"
+              >
+                Pickup address must be longer then {{form.get('pickup_address').errors['minlength']['requiredLength']}} symbols
+                Now {{form.get('pickup_address').errors['minlength']['actualLength']}} symbols
+              </small>
+            </span>
+          </div>
+
+          <div class="mt35 form-control">
+            <label for="delivery_address">Delivery address: </label>
+            <input
+              id="delivery_address"
+              type="text"
+              formControlName="delivery_address"
+              [ngClass]="{'invalid': form.get('delivery_address').invalid && form.get('delivery_address').touched}"
+            >
+            <span
+              class="error"
+              *ngIf="form.get('delivery_address').invalid && form.get('delivery_address').touched"
+            >
+              <small *ngIf="form.get('delivery_address').errors['required']">
+                Delivery address mustn't be empty.
+              </small>
+              <small
+                *ngIf="form.get('delivery_address').errors['minlength'] && form.get('delivery_address').errors['minlength']['requiredLength']"
+                class="pass-error w210"
+              >
+                Delivery address must be longer then {{form.get('delivery_address').errors['minlength']['requiredLength']}} symbols
+                Now {{form.get('delivery_address').errors['minlength']['actualLength']}} symbols
+              </small>
+            </span>
+          </div>
+        </div>
+
+        <div>
+
+          <div class="form-control">
+            <label for="width">Width: </label>
+            <input
+              id="width"
+              type="number"
+              formControlName="width"
+              [ngClass]="{'invalid': form.get('width').invalid && form.get('width').touched}"
+            >
+            <span
+              class="error"
+              *ngIf="form.get('width').invalid && form.get('width').touched"
+            >
+              <small *ngIf="form.get('width').errors['required']">
+                Width mustn't be empty.
+              </small>
+              <small
+                *ngIf="form.get('width').errors['min']"
+                class="pass-error w210 b0"
+              >
+                Width must be bigger then {{form.get('width').errors['min']['min']}} kg
+              </small>
+              <small
+                *ngIf="form.get('width').errors['max']"
+                class="pass-error w210 b0"
+              >
+                Width must be less then {{form.get('width').errors['max']['max']}} kg
+              </small>
+              <small
+                *ngIf="form.get('width').errors['pattern']"
+                class="pass-error b0"
+              >
+                Width must be digit.
+              </small>
+            </span>
+          </div>
+
+          <div class="form-control mt35">
+            <label for="length">Length: </label>
+            <input
+              id="length"
+              type="number"
+              formControlName="length"
+              [ngClass]="{'invalid': form.get('length').invalid && form.get('length').touched}"
+            >
+            <span
+              class="error"
+              *ngIf="form.get('length').invalid && form.get('length').touched"
+            >
+              <small *ngIf="form.get('length').errors['required']">
+                Length mustn't be empty.
+              </small>
+              <small
+                *ngIf="form.get('length').errors['min']"
+                class="pass-error w210 b0"
+              >
+                Length must be bigger then {{form.get('length').errors['min']['min']}} kg
+              </small>
+              <small
+                *ngIf="form.get('length').errors['max']"
+                class="pass-error w210 b0"
+              >
+                Length must be less then {{form.get('length').errors['max']['max']}} kg
+              </small>
+              <small
+                *ngIf="form.get('length').errors['pattern']"
+                class="pass-error b0"
+              >
+                Length must be digit.
+              </small>
+            </span>
+          </div>
+
+          <div class="form-control mt35">
+            <label for="height">Height: </label>
+            <input
+              id="height"
+              type="number"
+              formControlName="height"
+              [ngClass]="{'invalid': form.get('height').invalid && form.get('height').touched}"
+            >
+            <span
+              class="error"
+              *ngIf="form.get('height').invalid && form.get('height').touched"
+            >
+              <small *ngIf="form.get('height').errors['required']">
+                Height mustn't be empty.
+              </small>
+              <small
+                *ngIf="form.get('height').errors['min']"
+                class="pass-error w210 b0"
+              >
+                Height must be bigger then {{form.get('height').errors['min']['min']}} kg
+              </small>
+              <small
+                *ngIf="form.get('height').errors['max']"
+                class="pass-error w210 b0"
+              >
+                Height must be less then {{form.get('height').errors['max']['max']}} kg
+              </small>
+              <small
+                *ngIf="form.get('height').errors['pattern']"
+                class="pass-error b0"
+              >
+                Height must be digit.
+              </small>
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="mt45"
+        [disabled]="form.invalid || form.disabled"
+      >
+        Update Load
+      </button>
+
+    </form>
+
+  </ng-template>
+
+</div>

@@ -1,0 +1,83 @@
+<header>
+  <div class="flex">
+    <span class="mr30">Welcome, <h3>{{userName}}</h3></span>
+    <button (click)="logout()">LOGOUT</button>
+  </div>
+  <h2 class="center red" *ngIf="errMessage">{{errMessage}}</h2>
+</header>
+
+<main>
+  <section
+    [ngSwitch]="isDriver"
+    class="section-layout"
+  >
+    <div *ngSwitchCase="true">
+      <ul >
+        <li>
+          <a routerLink="/show-user-trucks" routerLinkActive="active">Show User Trucks</a>
+        </li>
+
+        <li>
+          <a routerLink="/create-new-truck" routerLinkActive="active">Create New Truck</a>
+        </li>
+
+        <li>
+          <a routerLink="/assigned-loads" routerLinkActive="active">Assigned Lods</a>
+        </li>
+
+        <li>
+          <a routerLink="/history" routerLinkActive="active">History</a>
+        </li>
+        <li>
+          <a routerLink="/profile" routerLinkActive="active">Profile</a>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngSwitchCase="false">
+      <ul>
+        <li>
+          <a routerLink="/create-new-load" routerLinkActive="active">Create New Load</a>
+        </li>
+
+        <li>
+          <a routerLink="/new-loads" routerLinkActive="active">New Loads</a>
+        </li>
+
+        <li>
+          <a routerLink="/posted-loads" routerLinkActive="active">Posted Loads</a>
+        </li>
+
+        <li>
+          <a routerLink="/assigned-loads" routerLinkActive="active">Assigned Lods</a>
+        </li>
+
+        <li>
+          <a routerLink="/history" routerLinkActive="active">History</a>
+        </li>
+        <li>
+          <a routerLink="/profile" routerLinkActive="active">Profile</a>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngSwitchDefault>
+      <ul>
+        <li>
+          <a routerLink="/assigned-loads" routerLinkActive="active">Assigned Lods</a>
+        </li>
+
+        <li>
+          <a routerLink="/history" routerLinkActive="active">History</a>
+        </li>
+        <li>
+          <a routerLink="/profile" routerLinkActive="active">Profile</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-content">
+    <router-outlet></router-outlet>
+  </section>
+</main>

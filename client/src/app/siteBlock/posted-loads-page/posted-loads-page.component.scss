@@ -1,0 +1,37 @@
+.container {
+  text-align: center;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid black;
+
+    h4 {
+      width: 25%;
+      border-right: 1px solid black;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  ul {
+    border-bottom: 1px solid #000;
+  }
+  li {
+    width: 25%;
+    border-right: 1px solid black;
+    padding: 5px;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+  }
+}

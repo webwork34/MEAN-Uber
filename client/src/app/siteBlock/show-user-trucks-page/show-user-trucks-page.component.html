@@ -1,0 +1,51 @@
+<h3 *ngIf="message" class="green center">{{message}}</h3>
+<h3 *ngIf="errMessage" class="red center">{{errMessage}}</h3>
+
+<p *ngIf="!trucks && !errMessage; else loaded">Loading...</p>
+<ng-template #loaded>
+  <ul
+    *ngFor="let truck of trucks; let i = index"
+    class="border mt10 p10"
+    [ngClass]="{borderGreen: truck.assigned_to}"
+  >
+    <li><b>_id</b>: {{truck._id}}</li>
+    <li class="mt5"><b>Created Date</b>: {{truck.created_date}}</li>
+    <li class="mt5"><b>Type</b>: {{truck.type}}</li>
+    <li *ngIf="truck.status" class="mt5"><b>Status</b>: {{truck.status}}</li>
+    <li *ngIf="truck.assigned_to" class="mt5"><b>Assigned to</b>: {{truck.assigned_to}}</li>
+
+    <li class="mt10">
+      <button
+        (click)="assign(i)"
+        class="mr10"
+        [disabled]="disable"
+        *ngIf="!disable"
+      >
+        ASSIGN
+      </button>
+
+      <button
+        (click)="unassign(i)"
+        class="mr10"
+        *ngIf="truck.assigned_to"
+      >
+        UNASSIGN
+      </button>
+
+      <button
+        (click)="delete(i)"
+        [disabled]="truck.assigned_to"
+        class="mr10"
+      >
+        DELETE
+      </button>
+
+      <button
+        (click)="goToUpdatePage(i)"
+        [disabled]="truck.assigned_to"
+      >
+        Update Truck
+      </button>
+    </li>
+  </ul>
+</ng-template>

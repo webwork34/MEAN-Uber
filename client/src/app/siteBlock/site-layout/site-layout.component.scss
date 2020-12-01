@@ -1,0 +1,32 @@
+header {
+  padding: 20px;
+  border-bottom: 1px solid black;
+
+  .mr30 {
+    margin-right: 30px;
+  }
+
+  h3 {
+    display: inline;
+  }
+}
+
+.section-layout {
+  border-right: 1px solid black;
+
+  a {
+    padding: 10px 20px;
+    display: block;
+  }
+}
+
+main {
+  height: calc(100vh - 74px);
+  display: flex;
+  width: 100%;
+}
+
+.section-content {
+  padding: 20px;
+  width: 100%;
+}

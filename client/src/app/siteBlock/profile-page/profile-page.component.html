@@ -1,0 +1,47 @@
+<h2
+  class="center mb20 red"
+  *ngIf="errMessage"
+>
+  {{errMessage}}
+</h2>
+<div class="container">
+  <div class="info flex">
+    <img src={{imageSrc}} alt="user-photo">
+
+    <ul>
+      <li *ngFor="let item of data" class="mt5"><b>{{item[0]}}:</b> {{item[1]}}</li>
+    </ul>
+  </div>
+
+  <form
+    class="mt20"
+    [formGroup]="form"
+    (ngSubmit)="onAddPhoto()"
+  >
+    <input
+      type="file"
+      class="dn"
+      #input
+      (change)="onFileUpload($event)"
+    >
+    <button
+      type="button"
+      class="mr10"
+      (click)="triggerClick()"
+    >
+      Choose photo
+    </button>
+
+    <button
+      type="submit"
+      [disabled]="form.disabled"
+    >
+      Save changes
+    </button>
+  </form>
+
+  <app-change-password></app-change-password>
+
+  <button (click)="deleteAcc()" class="mt20"> Delete account</button>
+
+</div>

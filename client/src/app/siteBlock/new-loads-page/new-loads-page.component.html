@@ -1,0 +1,70 @@
+<div class="container">
+
+  <h2 *ngIf="dataMessage">{{dataMessage}}</h2>
+  <h2
+    *ngIf="message"
+    class="mb20"
+    [ngStyle]="{color: colorToggle ? 'green' : 'red'}"
+  >
+    {{message}}
+  </h2>
+
+  <p *ngIf="!data && !message && !dataMessage">Loading...</p>
+
+
+  <div *ngIf="data">
+    <div class="header" *ngIf="!dataMessage">
+      <h4>LOAD NAME</h4>
+      <h4>CREATED DATE</h4>
+      <h4>PICK-UP ADDRESS</h4>
+      <h4>DELIVERY ADDRESS</h4>
+      <h4>ACTION</h4>
+    </div>
+
+    <ul
+      *ngFor="let load of data; let i=index"
+      class="flex"
+    >
+      <li>{{load.name}}</li>
+      <li>{{load.created_date}}</li>
+      <li>{{load.pickup_address}}</li>
+      <li>{{load.delivery_address}}</li>
+      <li class="flex">
+
+        <fa-icon
+          [icon]="faPencilAlt"
+          class="edit"
+          data-tooltip="Edit load"
+          (click)="editLoad(i)"
+          [ngStyle]="{display: displayToggle ? 'block' : 'none'}"
+        ></fa-icon>
+
+        <fa-icon
+          [icon]="faArrowCircleUp"
+          class="post"
+          data-tooltip="Post load for searching driver"
+          (click)="driverSearching(i)"
+          [ngStyle]="{display: displayToggle ? 'block' : 'none'}"
+        ></fa-icon>
+
+        <fa-icon
+          [icon]="faEye"
+          class="show"
+          data-tooltip="Show load info"
+          (click)="showLoadInfo(i)"
+          [ngStyle]="{display: displayToggle ? 'block' : 'none'}"
+        ></fa-icon>
+
+        <fa-icon
+          [icon]="faTrashAlt"
+          class="delete"
+          data-tooltip="Delete load"
+          (click)="delete(i)"
+          [ngStyle]="{display: displayToggle ? 'block' : 'none'}"
+        ></fa-icon>
+
+      </li>
+    </ul>
+  </div>
+
+</div>

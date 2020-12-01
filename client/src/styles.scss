@@ -1,0 +1,184 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+  border-bottom: 1px solid black;
+}
+
+.border {
+  border: 1px solid black;
+}
+
+.mt5 {
+  margin-top: 5px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+.mt35 {
+  margin-top: 35px;
+}
+
+.mt45 {
+  margin-top: 45px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.mr15 {
+  margin-right: 15px;
+}
+
+.mr30 {
+  margin-right: 30px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.p5 {
+  padding: 5px;
+}
+
+.p10 {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+
+  &:hover {
+    color: blue;
+  }
+}
+
+.p10-15 {
+  padding: 10px 15px;
+}
+
+button {
+  padding: 7px 15px;
+  cursor: pointer;
+}
+
+input {
+  padding: 5px;
+}
+
+.wrapper {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.active {
+  background: lightblue;
+}
+
+.card {
+  padding: 20px;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.form-control {
+  position: relative;
+}
+
+.error {
+  position: absolute;
+  left: 0;
+  bottom: -17px;
+  color: red;
+}
+
+.invalid {
+  border: 1px solid red;
+}
+
+.pass-error {
+  position: absolute;
+  width: 180px;
+  bottom: -17px;
+}
+
+.b0 {
+  bottom: 0;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.m0a {
+  margin: 0 auto;
+}
+
+.test {
+  width: 200px;
+  height: 100px;
+}
+
+fa-icon {
+  cursor: pointer;
+  font-size: 25px;
+
+  &:hover {
+    color: green;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.mw300 {
+  max-width: 300px;
+}
+
+.mw600 {
+  max-width: 600px;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.w210 {
+  width: 210px;
+}

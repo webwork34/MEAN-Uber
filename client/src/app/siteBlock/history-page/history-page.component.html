@@ -1,0 +1,36 @@
+<div class="container">
+
+  <p *ngIf="!data && !message; else loaded">Loading...</p>
+  <h2 *ngIf="message">{{message}}</h2>
+
+  <ng-template #loaded>
+    <div class="header" *ngIf="!message">
+      <h4>LOAD NAME</h4>
+      <h4>CREATED DATE</h4>
+      <h4>PICK-UP ADDRESS</h4>
+      <h4>DELIVERY ADDRESS</h4>
+    </div>
+
+    <ul *ngFor="let load of data" class="flex">
+      <li>{{load.name}}</li>
+      <li>{{load.created_date}}</li>
+      <li>{{load.pickup_address}}</li>
+      <li>{{load.delivery_address}}</li>
+    </ul>
+  </ng-template>
+
+</div>
+
+<div *ngIf="logs">
+  <h4 class="mt20 center">
+    -------------------- Aditional logs --------------------
+  </h4>
+  <div class="flex flex-wrap">
+    <ul *ngFor="let log of logs" class="border mt10 p10 mw300">
+      <li>{{log.time}}</li>
+      <li class="mt5">{{log.message}}</li>
+    </ul>
+  </div>
+</div>
+
+

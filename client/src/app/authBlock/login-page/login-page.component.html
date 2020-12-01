@@ -1,0 +1,62 @@
+<form
+  class="card border"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <h3 class="red" *ngIf="error">{{errMessage}}</h3>
+  <h2>Login to system</h2>
+  <div class="mt20 form-control">
+    <label for="email">Email: </label>
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      [ngClass]="{'invalid': form.get('email').invalid && form.get('email').touched}"
+    >
+    <span
+      class="error"
+      *ngIf="form.get('email').invalid && form.get('email').touched"
+    >
+      <small *ngIf="form.get('email').errors['required']">
+        Email shouldn't be empty.
+      </small>
+      <small *ngIf="form.get('email').errors['email']">
+        Write correct email.
+      </small>
+    </span>
+  </div>
+  <div class="mt30 form-control">
+    <label for="password">Password: </label>
+    <input
+      id="password"
+      type="password"
+      formControlName="password"
+      [ngClass]="{'invalid': form.get('password').invalid && form.get('password').touched}"
+    >
+    <span
+      class="error"
+      *ngIf="form.get('password').invalid && form.get('password').touched"
+    >
+      <small *ngIf="form.get('password').errors['required']">
+        Password shouldn't be empty.
+      </small>
+      <small
+        *ngIf="form.get('password').errors['minlength'] && form.get('password').errors['minlength']['requiredLength']"
+        class="pass-error"
+      >
+        Password should be bigger then {{form.get('password').errors['minlength']['requiredLength']}} symbols.
+        Now {{form.get('password').errors['minlength']['actualLength']}} symbols.
+      </small>
+    </span>
+
+  </div>
+  <button
+    type="submit"
+    class="mt45"
+    [disabled]="form.invalid || form.disabled"
+  >
+    Login
+  </button>
+
+  <a routerLink="/reset">Forgot password?</a>
+</form>

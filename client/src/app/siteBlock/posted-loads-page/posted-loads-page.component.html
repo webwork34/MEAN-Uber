@@ -1,0 +1,22 @@
+<div class="container">
+
+  <p *ngIf="!data && !message">Loading...</p>
+  <h2 *ngIf="message">{{message}}</h2>
+
+  <div *ngIf="data && !message">
+    <div class="header" *ngIf="!message">
+      <h4>LOAD NAME</h4>
+      <h4>CREATED DATE</h4>
+      <h4>PICK-UP ADDRESS</h4>
+      <h4>DELIVERY ADDRESS</h4>
+    </div>
+
+    <ul *ngFor="let load of data" class="flex">
+      <li>{{load.name}}</li>
+      <li>{{load.created_date}}</li>
+      <li>{{load.pickup_address}}</li>
+      <li>{{load.delivery_address}}</li>
+    </ul>
+  </div>
+
+</div>

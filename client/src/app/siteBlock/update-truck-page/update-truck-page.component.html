@@ -1,0 +1,51 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+
+  <h2 class="mb20">Update truck with id - {{truckId}}</h2>
+  <h3 class="red mb20" *ngIf="error">{{errMessage}}</h3>
+  <h3 class="green mb20" *ngIf="success">{{message}}</h3>
+
+  <div>
+    <input
+      type="radio"
+      id="sprinter"
+      class="mr10"
+      formControlName="type"
+      value="SPRINTER"
+    >
+    <label for="sprinter">SPRINTER</label>
+  </div>
+
+  <div class="mt5">
+    <input
+      type="radio"
+      id="small"
+      class="mr10"
+      formControlName="type"
+      value="SMALL STRAIGHT"
+    >
+    <label for="small">SMALL STRAIGHT</label>
+  </div>
+
+  <div class="mt5">
+    <input
+      type="radio"
+      id="large"
+      class="mr10"
+      formControlName="type"
+      value="LARGE STRAIGHT"
+    >
+    <label for="large">LARGE STRAIGHT</label>
+  </div>
+
+  <button
+    type="submit"
+    class="mt20"
+    [disabled]="form.disabled"
+  >
+    Update Truck
+  </button>
+
+</form>

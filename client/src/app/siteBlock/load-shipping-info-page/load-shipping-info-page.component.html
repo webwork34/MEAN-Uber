@@ -1,0 +1,64 @@
+<h3 class="mb20">Shipping info for load with id - {{loadId}}</h3>
+<h3 *ngIf="errMessage" class="red">{{errMessage}}</h3>
+
+<p *ngIf="!load && !errMessage; else loaded">Loading...</p>
+
+<ng-template #loaded>
+  <div *ngIf="load">
+    <div class="flex container">
+      <div>
+        <h4 class="center">LOAD INFO</h4>
+        <ul class="mt20 border p5">
+          <li><b>id</b>: {{load._id}}</li>
+          <li><b>Created by</b>: {{load.created_by}}</li>
+          <li><b>Created date</b>: {{load.created_date}}</li>
+          <li><b>Name</b>: {{load.name}}</li>
+          <li><b>Pick-up address</b>: {{load.pickup_address}}</li>
+          <li><b>Delivery address</b>: {{load.delivery_address}}</li>
+          <li><b>Payload</b>: {{load.payload}}</li>
+          <li><b>Width</b>: {{load.dimensions.width}}</li>
+          <li><b>Length</b>: {{load.dimensions.length}}</li>
+          <li><b>Height</b>: {{load.dimensions.height}}</li>
+          <li><b>Status</b>: {{load.status}}</li>
+          <li *ngIf="load.assigned_to"><b>Assigned to</b>: {{load.assigned_to}}</li>
+          <li *ngIf="load.state"><b>State</b>: {{load.state}}</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="center">TRUCK INFO</h4>
+        <ul class="mt20 border p5">
+          <li><b>id</b>: {{truck._id}}</li>
+          <li><b>Created by</b>: {{truck.created_by}}</li>
+          <li><b>Created date</b>: {{truck.created_date}}</li>
+          <li><b>Assigned to</b>: {{truck.assigned_to}}</li>
+          <li><b>Type</b>: {{truck.type}}</li>
+          <li><b>Status</b>: {{truck.status}}</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="center">DRIVER INFO</h4>
+        <ul class="mt20 border p5">
+          <li><b>id</b>: {{driver._id}}</li>
+          <li><b>Created date</b>: {{driver.createdDate}}</li>
+          <li><b>Email</b>: {{driver.email}}</li>
+          <li><b>Role</b>: {{driver.role}}</li>
+          <li><img src="{{driver.imageSrc}}" alt="driver_photo"></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt20">
+      <h4 class="center">LOGS</h4>
+      <ul
+        *ngFor="let log of logs"
+        class="border mt20 p5 logs mw300 "
+      >
+        <li>{{log.message}}</li>
+        <li>{{log.time}}</li>
+      </ul>
+    </div>
+  </div>
+</ng-template>

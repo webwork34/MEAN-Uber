@@ -1,0 +1,70 @@
+{
+  "logs": [
+    {
+      "userId": "5fc5093376ee4395f4020361",
+      "email": "driver@gmail.com",
+      "message": "User 'driver@gmail.com' logged in",
+      "time": "1st December 2020, 11:21:52"
+    },
+    {
+      "userId": "5fc5093376ee4395f4020361",
+      "email": "driver@gmail.com",
+      "message": "User 'driver@gmail.com' logged in",
+      "time": "1st December 2020, 11:25:44"
+    },
+    {
+      "userId": "5fc50ae2cddd4c68d451913c",
+      "email": "shipper@gmail.com",
+      "message": "User 'shipper@gmail.com' logged in",
+      "time": "1st December 2020, 11:26:04"
+    },
+    {
+      "userId": "5fc60c4893561ca25cf62917",
+      "email": "web.work.34@gmail.com",
+      "message": "User 'web.work.34@gmail.com' was created",
+      "time": "1st December 2020, 11:26:32"
+    },
+    {
+      "userId": "5fc60c4893561ca25cf62917",
+      "email": "web.work.34@gmail.com",
+      "message": "User 'web.work.34@gmail.com' changed password successfuly",
+      "time": "1st December 2020, 11:26:58"
+    },
+    {
+      "userId": "5fc60c4893561ca25cf62917",
+      "email": "web.work.34@gmail.com",
+      "message": "User 'web.work.34@gmail.com' logged in",
+      "time": "1st December 2020, 11:27:04"
+    },
+    {
+      "userId": "5fc50ae2cddd4c68d451913c",
+      "email": "shipper@gmail.com",
+      "message": "User 'shipper@gmail.com' logged in",
+      "time": "1st December 2020, 15:52:20"
+    },
+    {
+      "userId": "5fc5093376ee4395f4020361",
+      "email": "driver@gmail.com",
+      "message": "User 'driver@gmail.com' logged in",
+      "time": "1st December 2020, 16:45:14"
+    },
+    {
+      "userId": "5fc5093376ee4395f4020361",
+      "email": "driver@gmail.com",
+      "message": "User 'driver@gmail.com' logged in",
+      "time": "1st December 2020, 16:48:08"
+    },
+    {
+      "userId": "5fc50ae2cddd4c68d451913c",
+      "email": "shipper@gmail.com",
+      "message": "User 'shipper@gmail.com' logged in",
+      "time": "1st December 2020, 16:48:28"
+    },
+    {
+      "userId": "5fc5093376ee4395f4020361",
+      "email": "driver@gmail.com",
+      "message": "User 'driver@gmail.com' logged in",
+      "time": "1st December 2020, 16:49:26"
+    }
+  ]
+}
